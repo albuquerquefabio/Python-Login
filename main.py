@@ -7,6 +7,19 @@ root = Tk()
 root.geometry('300x300')
 root.title('Login')
 
+def send_form(username, password):
+  payload = {'username': username, 'password': password}
+  headers = {'content-type': 'application/json'}
+  r = requests.post('http://localhost:8000/auth/local', data=json.dumps(payload), headers=headers)
+  res = json.loads(json.dumps(r.json()))
+  # print res
+  if 'message' in res: 
+    print res['message']
+    return
+  else:
+    print res['token'] 
+    return
+
 def validate_form(username, password):
   print("Username: ", username.get())
   print("Password: ", password.get())
@@ -17,17 +30,9 @@ def validate_form(username, password):
   elif password.get() == '':
     print('Password empty')
     return
-  payload = {'username': username.get(), 'password': password.get()}
-  headers = {'content-type': 'application/json'}
-  r = requests.post('http://localhost:8000/auth/local', data=json.dumps(payload), headers=headers)
-  res = json.loads(json.dumps(r.json()))
-  # print res
-  if 'message' in res: 
-    print res['message']
+  else: 
+    send_form(username.get(), password.get())
     return
-  else:
-    print res['token'] 
-  return
 
 
 def main_wrap():
