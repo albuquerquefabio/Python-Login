@@ -1,5 +1,4 @@
 import json
-# from dbConn import connection
 
 class Login:
   def __init__(self, conn):
@@ -24,7 +23,7 @@ class Login:
               PASSWORD   TEXT                    NOT NULL);''')
     # print "Table created\n---\n"
 
-    self.conn.close()
+    # self.conn.close()
 
   def create(self, data):
     '''
@@ -36,11 +35,11 @@ class Login:
     obj = json.loads(json.dumps(data))
     if 'username' in obj and 'password' in obj:
       query = "INSERT INTO LOGIN (USERNAME, PASSWORD) \
-        VALUES('{}','{}')".format(obj['username'],obj['PASSWORD'])
+        VALUES('{}','{}')".format(obj['username'],obj['password'])
 
       self.conn.execute(query)
       self.conn.commit()
-      self.conn.close()
+      # self.conn.close()
       return True
     else:
       return False
@@ -55,7 +54,7 @@ class Login:
     login = self.conn.execute(query)
     for row in login:
       loginObj = {"id": row[0], "username": row[1], "password": row[2]}
-      self.conn.close()
+      # self.conn.close()
       return loginObj
 
   def update_data(self, sqlSet, sqlWhere):
@@ -69,7 +68,7 @@ class Login:
     query = "UPDATE LOGIN set {} WHERE {}".format(sqlSet, sqlWhere)
     self.conn.execute(query)
     self.conn.commit()
-    self.conn.close()
+    # self.conn.close()
 
   def delete_data(self, sqlWhere = None):
     '''
@@ -87,8 +86,15 @@ class Login:
 
     self.conn.execute(query)
     self.conn.commit()
-    self.conn.close()
+    # self.conn.close()
 
+  def close_connection(self):
+    '''
+      Close User db connection
+
+      :return: void
+    '''
+    self.conn.close()
 
 # conn = connection()
 

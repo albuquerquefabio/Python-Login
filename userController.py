@@ -1,5 +1,4 @@
 import json
-# from dbConn import connection
 
 class User:
   def __init__(self, conn):
@@ -24,12 +23,12 @@ class User:
               TOKEN TEXT                    NOT NULL);''')
     # print "Table created\n---\n"
 
-    self.conn.close()
+    # self.conn.close()
 
   def create(self, data):
     '''
       Create a new row into USER 
-      :param dict data: User crendentials should be { 'username': str, 'password': str}
+      :param dict data: User crendentials should be { '_id': str, 'token': str}
 
       :return: bool
     '''
@@ -40,7 +39,7 @@ class User:
 
       self.conn.execute(query)
       self.conn.commit()
-      self.conn.close()
+      # self.conn.close()
       return True
     else:
       return False
@@ -55,7 +54,7 @@ class User:
     user = self.conn.execute(query)
     for row in user:
       userObj = {"id": row[0], "_id": row[1], "token": row[2]}
-      self.conn.close()
+      # self.conn.close()
       return userObj
 
   def update_data(self, sqlSet, sqlWhere):
@@ -69,7 +68,7 @@ class User:
     query = "UPDATE USER set {} WHERE {}".format(sqlSet, sqlWhere)
     self.conn.execute(query)
     self.conn.commit()
-    self.conn.close()
+    # self.conn.close()
 
   def delete_data(self, sqlWhere = None):
     '''
@@ -87,8 +86,15 @@ class User:
 
     self.conn.execute(query)
     self.conn.commit()
-    self.conn.close()
+    # self.conn.close()
 
+  def close_connection(self):
+    '''
+      Close User db connection
+
+      :return: void
+    '''
+    self.conn.close()
 
 # conn = connection()
 
