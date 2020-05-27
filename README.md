@@ -10,8 +10,9 @@ A simple GUI login in python with http request.
   - [x] do logout and remove all data from sqlite
 
 - TODO:
-- [ ] Connect with Socket.io as client
-- [ ] Send credentials over the socket
+
+  - [ ] Connect with Socket.io as client
+  - [ ] Send credentials over the socket
 
 ## Depencencies
 
