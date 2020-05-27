@@ -1,19 +1,12 @@
-import sqlite3
 import json
-
-def connection():
-  conn = sqlite3.connect('./db/user.db')
-  
-  print "\n---\nDatabase connected"
-
-  return conn
+from db import connection
 
 def create_table(conn):
   conn.execute('''CREATE TABLE IF NOT EXISTS USER
           (ID   INTEGER   PRIMARY KEY  AUTOINCREMENT,
           _ID   TEXT                    NOT NULL,
           TOKEN TEXT                    NOT NULL);''')
-  print "Table created\n---\n"
+  # print "Table created\n---\n"
 
   conn.close()
 
@@ -58,7 +51,7 @@ def delete_data(conn, sqlWhere = None):
 # conn = connection()
 
 # Run create table once
-# create_table(connection())
+create_table(connection())
 
 
 # CRUD - Create Read Update and Delete
