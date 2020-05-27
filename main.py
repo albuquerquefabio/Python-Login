@@ -3,16 +3,26 @@ from functools import partial
 import requests
 import json
 
+from dbConn import connection
+from userController import User
+from loginController import Login
+
+userCtrl  = User(connection())
+loginCtrl = Login(connection())
+
+userCtrl.create
+
 root = Tk()
 root.geometry('300x300')
 root.title('Login')
+
 
 def send_form(username, password):
   payload = {'username': username, 'password': password}
   headers = {'content-type': 'application/json'}
   r = requests.post('http://localhost:8000/auth/local', data=json.dumps(payload), headers=headers)
   res = json.loads(json.dumps(r.json()))
-  
+
   if 'message' in res: 
     print res['message']
     return
