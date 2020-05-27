@@ -49,7 +49,7 @@ class User:
     '''
       Show data from db
 
-      :return: dict
+      :return: dict: {\"id\": str, \"_id\": str, \"token\": str}
     '''
     query = "SELECT * FROM USER"
     user = self.conn.execute(query)
