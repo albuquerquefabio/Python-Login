@@ -19,12 +19,27 @@ A simple GUI login in python with http request.
 `pip install functools`
 `pip install requests`
 
+## Server side
+
+All server side was made in **nodeJS** with MongoDb, Socket.io, RedisJWT RedisDB and more;
+To see more about my nodeJs server follow this: [nodetomic-api.](https://github.com/albuquerquefabio/nodetomic-api)
+
 ## Run
 
 `python main.py`
 _work great with Linux and macOS_
 
-## Server side
+## Demo
 
-All server side was made in **nodeJS** with MongoDb, Socket.io, RedisJWT RedisDB and more;
-To see more about my nodeJs server follow this: [nodetomic-api.](https://github.com/albuquerquefabio/nodetomic-api)
+### Login
+
+![Login Screen](https://github.com/albuquerquefabio/Python-Login/blob/master/demo/01-login.png)
+
+### Login Error
+
+![Login error - not registered](https://github.com/albuquerquefabio/Python-Login/blob/master/demo/02-error.png)
+![Login error - invalid password](https://github.com/albuquerquefabio/Python-Login/blob/master/demo/03-error.png)
+
+### Welcome window
+
+![Welcome](https://raw.githubusercontent.com/albuquerquefabio/Python-Login/master/demo/04-welcome.png)
