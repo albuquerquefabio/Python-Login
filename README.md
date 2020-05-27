@@ -3,16 +3,14 @@
 A simple GUI login in python with http request.
 
 - Done List:
-
-  - [x] Request credenticals over http
-  - [x] Save credenticals with sqlite
-  - [x] Open app and check if exists credentials and go to welcome window or do login again
-  - [x] do logout and remove all data from sqlite
+- [x] Request credenticals over http
+- [x] Save credenticals with sqlite
+- [x] Open app and check if exists credentials and go to welcome window or do login again
+- [x] do logout and remove all data from sqlite
 
 - TODO:
-
-  - [] Connect with Socket.io as client
-  - [] Send credentials over the socket
+- [] Connect with Socket.io as client
+- [] Send credentials over the socket
 
 ## Depencencies
 
