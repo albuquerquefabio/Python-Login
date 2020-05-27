@@ -116,6 +116,7 @@ venv.bak/
 
 # SQL database
 ./db/*.db
+/db/*.db
 # Rope project settings
 .ropeproject
 
