@@ -114,6 +114,8 @@ venv.bak/
 .spyderproject
 .spyproject
 
+# SQL database
+./db/*.db
 # Rope project settings
 .ropeproject
 
