@@ -21,8 +21,8 @@ A simple GUI login in python with http request.
 
 ## Server side
 
-All server side was made in **nodeJS** with MongoDb, Socket.io, RedisJWT RedisDB and more;
-To see more about my nodeJs server follow this: [nodetomic-api.](https://github.com/albuquerquefabio/nodetomic-api)
+All server side was made in **nodeJS** with MongoDb, Socket.io, RedisJWT, RedisDB and more;
+To see more about my forked nodeJs server follow this: [nodetomic-api.](https://github.com/albuquerquefabio/nodetomic-api)
 
 ## Run
 
