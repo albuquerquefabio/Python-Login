@@ -49,12 +49,12 @@ class Login:
     '''
       Show data from db
 
-      :return: dict
+      :return: dict: {\"id\": str, \"username\": str, \"password\": str}
     '''
     query = "SELECT * FROM LOGIN"
     login = self.conn.execute(query)
     for row in login:
-      loginObj = {"id": row[0], "_id": row[1], "token": row[2]}
+      loginObj = {"id": row[0], "username": row[1], "password": row[2]}
       self.conn.close()
       return loginObj
 
@@ -99,16 +99,16 @@ class Login:
 # CRUD - Create Read Update and Delete
 
 # Create a new row
-# create(connection(), {'_id': 'some_ID', 'token': 'random token goes here'})
+# create(connection(), {'username': 'someusername', 'password': 'random password goes here'})
 
 # Return a row as python object
 # print list_data(connection())
 
 # Update data
-# update_data(connection(), "token = '467a7f56-9ff6-11ea-bb37-0242ac130002'", "_ID = 'some_ID'")
+# update_data(connection(), "password = '467a7f56-9ff6-11ea-bb37-0242ac130002'", "username = 'someusername'")
 
 # Delete row
-# delete_data(connection(), "_ID = 'some_ID'")
+# delete_data(connection(), "username = 'someusername'")
 
 
 
