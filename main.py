@@ -12,7 +12,7 @@ def send_form(username, password):
   headers = {'content-type': 'application/json'}
   r = requests.post('http://localhost:8000/auth/local', data=json.dumps(payload), headers=headers)
   res = json.loads(json.dumps(r.json()))
-  # print res
+  
   if 'message' in res: 
     print res['message']
     return
